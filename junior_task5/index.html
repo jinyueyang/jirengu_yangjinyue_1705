@@ -5,12 +5,24 @@
 </head>
 <body>
 <div class="login">
-	<form>
+	<form action="/abc" method="get">
+		<div class="submit">
+			<button>Submit!</button>
+		</div>
 		<div class="username">
-			<input type="text" name="username">
+			<label for="username">your name</label>
+			<input id="username" type="text" name="username">
 		</div>
 		<div>
-			<input type="password" name="password">
+			<label for="password">your password</label>
+			<input id="password" type="password" name="password">
+		</div>
+		<div class="hobby">
+			<label>your hobbies</label>
+			<input type="checkbox" name="hobby" value="read"> reading
+			<input type="checkbox" name="hobby" value="movie"> watching movies
+			<input type="checkbox" name="hobby" value="piano"> playing piano
+			<input type="checkbox" name="hobby" value="paint"> painting
 		</div>
 	</form>
 </div>
