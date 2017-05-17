@@ -6,23 +6,58 @@
 <body>
 <div class="login">
 	<form action="/abc" method="get">
+
 		<div class="submit">
 			<button>Submit!</button>
 		</div>
+
 		<div class="username">
 			<label for="username">your name</label>
-			<input id="username" type="text" name="username">
+			<input id="username" type="text" name="username" value="bunny">
 		</div>
+
 		<div>
 			<label for="password">your password</label>
-			<input id="password" type="password" name="password">
+			<input id="password" type="password" name="password" placeholder="please input your password">
 		</div>
+
 		<div class="hobby">
 			<label>your hobbies</label>
 			<input type="checkbox" name="hobby" value="read"> reading
 			<input type="checkbox" name="hobby" value="movie"> watching movies
 			<input type="checkbox" name="hobby" value="piano"> playing piano
 			<input type="checkbox" name="hobby" value="paint"> painting
+		</div>
+
+		<div class="sex">
+			<label>your gender</label>
+			<input type="radio" name="sex" value="male"> male
+			<input type="radio" name="sex" value="female"> female
+		</div>
+
+		<div class="file">
+			<input type="file" name="myfile" accept="image/png">
+		</div>
+
+		<select name="city">
+			<option value="beijing">Beijing</option>
+			<option value="shanghai" selected="selected">Shanghai</option>
+			<option value="hangzhou">Hangzhou</option>
+		</select>
+
+		<div class="textarea">
+			<textarea name="article">
+				bunny
+			</textarea>
+
+			<input type="hidden" name="abcd" value="123456">
+
+			<input type="button" value="Button"/>
+
+			<input type="submit" value="Submit"/>
+
+			<input type="reset" value="Reset"/>
+
 		</div>
 	</form>
 </div>
