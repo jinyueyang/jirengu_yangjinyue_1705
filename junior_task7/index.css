@@ -1,0 +1,35 @@
+a{
+  color:red;
+}
+
+a:visited{
+  color:green;
+}
+
+a:hover{
+  color:blue;
+}
+
+a:active{
+  color:yellow;
+}
+
+.child:first-child{
+	color:red;
+}
+
+.child:first-of-type{
+	background-color: blue;
+}
+
+.child:nth-of-type(2){
+	background-color: yellow;
+}
+
+.wrap::before{
+	content: 'aaa';
+}
+
+.wrap::after{
+	content: 'bbb';
+}
