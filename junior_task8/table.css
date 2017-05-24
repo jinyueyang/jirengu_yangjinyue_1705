@@ -1,0 +1,38 @@
+.layout {
+	text-transform: capitalize;
+	font-family: arial;
+	width: 600px;
+	margin: 8px auto;
+}
+
+.layout>table {
+	width: 100%;
+	margin-top: 30px;
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.h-table tr {
+	border-bottom: 1px solid #ddd;
+	text-align: left;
+}
+
+.h-table th {
+	padding: 8px;
+}
+
+.h-table-v1 th {
+	color: #fff;
+	background-color: #4caf50;
+	padding: 8px;
+}
+
+.h-table td {
+	padding: 8px;
+}
+
+.h-table tr:nth-child(even) {
+	background-color: #f1f1f1;
+}
+
