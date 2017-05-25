@@ -1,0 +1,44 @@
+.tri {
+	height: 0px;
+	width: 0px;
+	margin: 50px 10px;
+	border-top: solid 50px transparent;
+	border-right: solid 50px transparent;
+	border-bottom: solid 50px transparent;
+	border-left: solid 50px transparent;
+}
+
+.tri.v1 {
+	margin-top: 10px;
+	border-color: blue yellow green red;
+}
+
+.tri.v2 {
+	border-top: solid 50px blue;
+}
+
+.tri.v3 {
+	border-left: solid 50px red;
+}
+
+.tri.v4 {
+	border-right: solid 50px yellow;
+}
+
+.tri.v5 {
+	border-bottom: solid 50px green;
+}
+
+.tri.v6 {
+	border-top: solid 35px transparent;
+	border-right: solid 35px transparent;
+	border-bottom: solid 35px red;
+	border-left: solid 35px red;
+}
+
+.tri.v7 {
+	border-top: solid 35px transparent;
+	border-right: solid 35px green;
+	border-bottom: solid 35px green;
+	border-left: solid 35px transparent;
+}
