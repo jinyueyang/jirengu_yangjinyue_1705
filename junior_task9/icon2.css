@@ -1,0 +1,14 @@
+.icon {
+  width: 500px;
+  height: 500px;
+  background: transparent url(spritesheet.png) no-repeat;
+  display: inline-block;
+}
+
+.icon.search {
+  background-position: -5px -5px;
+}
+
+.icon.cart {
+  background-position: -515px -5px;
+}
