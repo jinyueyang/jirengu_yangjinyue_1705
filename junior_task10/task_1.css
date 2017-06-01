@@ -1,0 +1,39 @@
+.layout {
+	width: 600px;
+	margin: 0 auto;
+}
+.alert {
+	margin-top: 30px;
+	color: #fff;
+	padding: 1px 16px;
+	line-height: 1.5;
+	border-radius: 3px;
+}
+.alert .close {
+	text-decoration: none;
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	color: inherit;
+	cursor: pointer;
+}
+.alert h3 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 10px 0;
+}
+.alert p {
+	text-indent: 2em;
+}
+.alert.poem1 {
+	background-color: #4caf50;
+}
+.alert.poem2 {
+	background-color: #2196f3;
+}
+.alert.poem3 {
+	background-color: #f44336;
+}
+.alert.poem4 {
+	background-color: #ff9800;
+}

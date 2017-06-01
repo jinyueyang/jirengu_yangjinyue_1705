@@ -1,0 +1,40 @@
+.layout {
+	width: 600px;
+	margin: 0 auto;
+}
+.layout .modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal .panel {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	background-color: #fff;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.panel .header {
+	background-color: #009688;
+	padding: 1px 16px;
+	color: #fff;
+}
+.panel .header .close {
+	float: right;
+	margin-top: 16px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.panel .main {
+	padding: 16px;
+}
+.panel .footer {
+	background-color: #009688;
+	padding: 1px 16px;
+	color: #fff;
+}
