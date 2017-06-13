@@ -1,0 +1,30 @@
+.layout:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.menu {
+	width: 100px;
+	height: 500px;
+	background: #0b6e48;
+	float: left;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 400%;
+	padding: 10px 30px 60px 15px;
+}
+.aside {
+	width: 200px;
+	background:#199475;
+	float: right;
+	padding: 10px 30px;
+	font-size: 14px;
+	color:#fff;	
+}
+.main {
+	margin-left: 155px;
+	margin-right: 270px;
+	background: #ddf0ed;
+	padding: 10px 30px;
+}

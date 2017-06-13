@@ -1,0 +1,41 @@
+.layout {
+	width: 900px;
+	margin: 0 auto;
+}
+.layout h1 {
+	color: #666;
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.container:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.container {
+	margin-left: -10px;
+}
+.container .card {
+	float: left;
+	margin-left: 10px;
+	margin-top: 30px;
+	list-style: none;
+	width: 200px;
+/*	height: 300px;*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}
+.container .card img {
+	width: 100%;
+	height: 300px;
+	opacity: 0.75;
+}
+.container .card .detail {
+	text-align: center;
+	padding: 1px 16px;
+}
+.container .card .detail p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

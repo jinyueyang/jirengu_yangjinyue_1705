@@ -1,0 +1,37 @@
+.content:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.content {
+	padding-left: 230px;
+	padding-right: 210px;
+}
+.main {
+	height: 500px;
+	background: #3f8887;
+	color: #fff;
+	width: 100%;
+}
+.aside {
+	width: 200px;
+/*	height: 400px;*/
+	background: #fbf5c4;
+	margin-left: -100%;
+	position: relative;
+	left: -250px;
+	font-size: 14px;
+}
+.extra {
+	width: 150px;
+/*	height: 400px;*/
+	background: #50c5c3;
+	margin-left: -190px;
+	position: relative;
+	left: 200px;
+	font-size: 14px;
+}
+.aside,.main,.extra{
+	float: left;
+	padding: 10px;
+}

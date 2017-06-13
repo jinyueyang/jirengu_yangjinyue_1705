@@ -1,0 +1,38 @@
+.content:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.aside {
+	width: 200px;
+	background: #ffcfc2;
+	font-size: 14px;
+	margin-left: -100%;
+	padding: 0 10px;
+}
+.extra {
+	width: 150px;
+	background: #8df0f7;
+	font-size: 14px;
+	margin-left: -170px;
+	padding: 0 10px;
+}
+.main {
+/*	background: #336466;
+	height: 500px;*/
+	color: #fff;
+	width: 100%;
+}
+.aside,.main,.extra {
+	float: left;
+}
+.wrap {
+	margin-left: 230px;
+	margin-right: 180px;
+	background: #336466;
+	height: 500px;
+}
+.wrap h2{
+	margin-top: 0;
+	padding-top: 10px;
+}
