@@ -1,0 +1,31 @@
+.child {
+  width: 100px;
+  margin: 10px;
+}
+.child1 {
+	background: red;
+}
+.child2 {
+	background: yellow;
+}
+.child3 {
+	background: green;
+}
+.child4 {
+	background: blue;
+}
+.child5 {
+	background: purple;
+}
+.child6 {
+	background: orange;
+}
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background: #ddd;
+  width: 600px;
+}

@@ -1,0 +1,25 @@
+.child {
+	margin: 1px;
+	height: 70px;
+}
+.child:nth-child(1) {
+	background: red;
+/*	flex-grow: 1;*/
+	/*flex-shrink: 1;*/
+	order: 3;
+}
+.child:nth-child(2) {
+	background: yellow;
+/*	flex-grow: 2;*/
+	/*flex-shrink: 2;*/
+	order: 2;
+}
+.child:nth-child(3) {
+	background: green;
+	order: 1;
+}
+.parent	{
+	display: flex;
+	background: #ddd;
+	width: 500px;
+}

@@ -1,0 +1,27 @@
+header{
+	height: 50px;
+	background: #ddd;
+}
+footer{
+	height: 50px;
+	background: #ddd;
+}
+.content{
+	display: flex;
+}
+.content > aside{
+	width: 120px;
+	background: #376956; 
+	order: 1;
+}
+.content > main{
+	height: 600px;
+	flex: 1;
+	background: #009688;
+	order: 2;
+}
+.content > nav{
+	width: 100px;
+	background: #0b6e48;
+	order: 3;
+}
