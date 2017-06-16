@@ -1,0 +1,24 @@
+.bubble {
+	position: relative;
+	padding: 10px;
+	border-radius: 5px;
+	background: #fff;
+	border: 1px solid #009688;
+	display: inline-block;
+}
+
+.bubble::before {
+	width: 10px;
+	height: 10px;
+	border-left: 1px solid #009688;
+	border-top: 1px solid #009688;
+	background: #fff;
+	display: inline-block;
+	transform: rotateZ(45deg);
+	position: absolute;
+	top: -6px;
+}
+
+.bubble::before {
+	content: '';
+}

@@ -1,0 +1,25 @@
+li{
+  list-style: none;
+}
+.clearfix:after{
+  content:'';
+  display: block;
+  clear: both;
+}
+
+.navbar{
+  background: #000;
+}
+.navbar>li{
+  float: left;
+  margin: 5px 10px;;
+}
+.navbar a{
+  color: #fff;
+}
+
+/* .navbar>.clear{
+  float: none;
+  display: block;
+  clear: both;
+} */

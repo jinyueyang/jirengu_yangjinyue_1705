@@ -1,0 +1,15 @@
+h6::first-letter {
+	font-size: 30px;
+}
+
+h6::after {
+	content: 'hahahahaha'
+}
+
+p::selection {
+	background: red;
+}
+
+input::-webkit-input-placeholder {
+	color: blue;
+}
