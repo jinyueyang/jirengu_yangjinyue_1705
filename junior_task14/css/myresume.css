@@ -1,0 +1,182 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.ct {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+header {
+	position: relative;
+}
+
+header:after,
+footer:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+header .avatar {
+	float: left;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	background: #000;
+	border-radius: 75px;
+	color: #fff;
+	font-size: 24px;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+header .avatar span:nth-child(1) {
+	position: absolute;
+	left: 25px;
+	top: 40px;
+}
+
+header .avatar span:nth-child(2) {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -30px;
+	width: 60px;
+	border-top: 2px solid #fff;
+	transform: rotate(-45deg);
+}
+
+header .avatar span:nth-child(3) {
+	position: absolute;
+	right: 25px;
+	bottom: 40px;
+}
+
+header .name {
+	float: left;
+	position: absolute;
+	top: 50%;
+	left: 200px;
+	transform: translateY(-50%);
+}
+
+header .name h2 {
+	font-weight: lighter;
+	font-size: 30px;
+}
+
+header .contact {
+	float: right;
+}
+
+header .contact h3 {
+	border-bottom: 3px solid #000;
+	width: 400px;
+	padding-bottom: 5px;
+}
+
+header .contact ul {
+	margin-top: 5px;
+}
+
+header .contact ul>li {
+	list-style: none;
+	line-height: 2;
+}
+
+header .contact ul>li span {
+	font-weight: bold;
+}
+
+main,footer {
+	font-size: 14px;
+	line-height: 2;
+	margin-top: 40px;
+}
+
+.intro {
+	font-size: 24px;
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+	margin-left: 20px;
+	width: 450px;
+}
+
+.detail {
+	margin-top: 30px;
+}
+
+.detail>li {
+	list-style: none;
+	position: relative;
+	margin-left: 30px;
+	margin-right: 30px;
+	padding-left: 70px;
+	border-left: 1px solid #000;
+}
+
+main ul>li:before {
+	content: '';
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: #000;
+	border-radius: 4px;
+	position: absolute;
+	left: -5px;
+	top: 17px;
+}
+
+.detail h3 {
+	font-size: 20px;
+	color: #ccc;
+	font-weight: normal;
+	line-height: 2;
+}
+
+.detail h3>span {
+	color: #000;
+	font-weight: lighter;
+}
+
+footer ul>li:before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #000;
+	border-radius: 6px;
+	position: absolute;
+	left: -5px;
+	top: 14px;
+}
+
+footer ul>li:after {
+	content: '+';
+	display: inline-block;
+	position: absolute;
+	left: -3px;
+	top: 7px;
+}
+
+footer .detail>li {
+	border: none;
+}
+
+.footer.left,
+.footer.right {
+	float: left;
+	width: 50%;
+}
+
+.detail.relative>li {
+	float: left;
+	width: 22%;
+}
+
+.detail.relative span {
+	font-size: 15px;
+}
