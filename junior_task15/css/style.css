@@ -1,7 +1,74 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
 body {
 	overflow-x: hidden;
 	font-size: 14px;
-	line-height: 1.5;
+	/*line-height: 1.5;*/
 	color: #000;
 	background: #fff;
+	font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.navbar {
+	padding: 10px 0;
+	background: #080808;
+	position: fixed;
+	right: 0;
+	left: 0;
+}
+
+.navbar .container {
+	width: 90%;
+	padding:0 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navbar .container .navbar-header {
+	float: left;
+	padding: 5px;
+}
+
+.navbar-brand {
+	color: #DDD23B;
+	text-decoration: none;
+	padding: 10px;
+	opacity: 0.85;
+}
+
+.navbar .container .navbar-menu {
+	float: right;
+}
+
+.navbar .container .navbar-menu .navbar-right>li {
+	float: left;
+	padding: 20px;
+	list-style-type: none;
+	border-radius: 5px;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	letter-spacing: 1px;
+	font-size: 16px;
+}
+
+.navbar .container .navbar-menu .navbar-right>li>a {
+	text-decoration: none;
+	color: #DDD23B;
+}
+
+.navbar .container .navbar-menu .navbar-right>li:hover {
+	background: #DDD23B;
+	color: #080808;
+}
+
+.navbar .container .navbar-menu .navbar-right>li>a:hover {
+	
 }
