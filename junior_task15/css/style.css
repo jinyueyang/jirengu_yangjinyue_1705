@@ -21,12 +21,13 @@ body {
 .navbar {
 	padding: 10px 0;
 	background: #080808;
+	opacity: 0.8;
 	position: fixed;
 	right: 0;
 	left: 0;
 }
 
-.navbar .container {
+.container {
 	width: 90%;
 	padding:0 15px;
 	margin-right: auto;
@@ -42,7 +43,6 @@ body {
 	color: #DDD23B;
 	text-decoration: none;
 	padding: 10px;
-	opacity: 0.85;
 }
 
 .navbar .container .navbar-menu {
@@ -51,7 +51,7 @@ body {
 
 .navbar .container .navbar-menu .navbar-right>li {
 	float: left;
-	padding: 20px;
+	padding: 18px 0;
 	list-style-type: none;
 	border-radius: 5px;
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -61,14 +61,45 @@ body {
 
 .navbar .container .navbar-menu .navbar-right>li>a {
 	text-decoration: none;
-	color: #DDD23B;
+	color: #fff;
+	padding: 20px;
 }
 
 .navbar .container .navbar-menu .navbar-right>li:hover {
 	background: #DDD23B;
-	color: #080808;
 }
 
 .navbar .container .navbar-menu .navbar-right>li>a:hover {
-	
+	color: #080808;
+}
+
+header {
+	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/header-bg.jpg) center center no-repeat;
+	background-size: cover;
+	height: 700px;
+	text-align: center;
+	color: #fff;
+}
+
+header .intro-text {
+	padding-top: 250px;
+	padding-bottom: 200px;
+}
+
+header .intro-text .intro-lead-in {
+	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-style: italic;
+	font-size: 42px;
+	line-height: 42px;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+}
+
+header .intro-text .intro-heading {
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 75px;
+	line-height: 75px;
+	letter-spacing: 3px;
 }
