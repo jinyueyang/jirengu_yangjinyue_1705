@@ -160,7 +160,7 @@ section .container .section-subheading {
 
 .resource-list .resource-col {
 	float: left;
-	margin: 15px;
+	margin: 10px;
 
 }
 
@@ -237,7 +237,7 @@ section .container .section-subheading {
 
 .character-list .character-col .character-name li {
 	padding: 0 0 120px 0;
-	width: 155px;
+	width: 153px;
 }
 
 .character-list .character-col .character-name li:first-child {
