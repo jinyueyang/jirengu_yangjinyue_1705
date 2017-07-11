@@ -62,7 +62,7 @@ body {
 .navbar .container .navbar-menu .navbar-right>li>a {
 	text-decoration: none;
 	color: #fff;
-	padding: 20px;
+	padding: 15px;
 }
 
 .navbar .container .navbar-menu .navbar-right>li:hover {
@@ -152,7 +152,7 @@ section .container .section-subheading {
 	line-height: 1.75;
 }
 
-#resource {
+#resource, #team {
 	background: #f7f7f7;
 }
 
@@ -160,13 +160,14 @@ section .container .section-subheading {
 
 .resource-list .resource-col {
 	float: left;
-	margin: 10px;
+	margin: 12px;
 
 }
 
 .resource-list .resource-col a {
 	position: relative;
 	text-decoration: none;
+	display: inline-block;
 }
 
 .resource-list .resource-col a .resource-img-hover {
@@ -223,6 +224,7 @@ section .container .section-subheading {
 	list-style: none;
 	position: relative;
 	font-size: 12px;
+	width: 155px;
 }
 
 .character-list .character-col .character-name::before {
@@ -231,13 +233,12 @@ section .container .section-subheading {
 	position: absolute;
 	content: '';
 	width: 2px;
-	right: 38px;
+	right: 41px;
 	background: #fed136;
 }
 
 .character-list .character-col .character-name li {
 	padding: 0 0 120px 0;
-	width: 153px;
 }
 
 .character-list .character-col .character-name li:first-child {
@@ -258,15 +259,10 @@ section .container .section-subheading {
 	position: absolute;
 	width: 80px;
 	height: 80px;
+	/*background: #fed136 url(../img/sprites/rachel.png) no-repeat;*/
 	right: 0;
 	border-radius: 50%;
-	background-color: #fed136;
-}
-
-.character-list .character-col .character-name .character-name-img img{
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
+	/*background-color: #fed136;*/
 	border: 2px solid #fed136;
 }
 
@@ -274,4 +270,63 @@ section .container .section-subheading {
 	float: right;
 	margin-top: 28px;
 	padding-right: 85px;
+}
+
+.team-member {
+	width: 33.333333%;
+	text-align: center;
+	float: left;
+}
+
+.team-member img {
+	border-radius: 50%;
+}
+
+.team-member h4 {
+	font-size: 18px;
+	font-weight: 700;
+	margin-top: 20px;
+}
+
+.team-member ul {
+	list-style: none;
+}
+
+.team-member ul li {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.team-member ul li a {
+	display: block;
+	background-color: #222;
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+	line-height: 50px;
+	color: #fff;
+	transition: all .3s;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+.team-member ul li a:hover {
+	background-color: #fed136;
+}
+
+.team-member ul li a .icon-weibo:before {
+	content: '\e601';
+}
+
+.team-member ul li a .icon-douban:before {
+	content: '\e600';
+}
+
+.team-member ul li a .icon-mafengwo:before {
+	content: '\e67b';
+}
+
+.team-list {
+	margin-bottom: 50px;
 }
