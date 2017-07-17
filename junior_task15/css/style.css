@@ -21,10 +21,11 @@ body {
 .navbar {
 	padding: 10px 0;
 	background: #080808;
-	/*opacity: 0.8;*/
+	opacity: 0.6;
 	position: fixed;
 	right: 0;
 	left: 0;
+	z-index: 1030;
 }
 
 .container {
@@ -40,7 +41,7 @@ body {
 }
 
 .navbar-brand {
-	color: #DDD23B;
+	color: #FFC408;
 	text-decoration: none;
 	padding: 10px;
 }
@@ -66,7 +67,7 @@ body {
 }
 
 .navbar .container .navbar-menu .navbar-right>li:hover {
-	background: #DDD23B;
+	background: #FFC408;
 }
 
 .navbar .container .navbar-menu .navbar-right>li>a:hover {
@@ -74,9 +75,8 @@ body {
 }
 
 header {
-	background: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/header-bg.jpg) center center no-repeat;
-	background-size: cover;
-	height: 700px;
+	background: url(../img/title-image2.jpg) repeat;
+	height: 750px;
 	text-align: center;
 	color: #fff;
 }
@@ -104,8 +104,28 @@ header .intro-text .intro-heading {
 	letter-spacing: 3px;
 }
 
+header .intro-text a {
+	background-color: #FFC408;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 20px 40px;
+	border-color: #FFC408;
+	border-radius: 4px;
+	font-weight: 700;
+	font-size: 18px;
+	border: 1px solid transparent;
+	display: inline-block;
+	margin-top: 50px;
+	text-decoration: none;
+}
+
+header .intro-text a:hover {
+	border-color: #fec503;
+	background-color: #fec503;
+}
+
 section {
-	padding: 150px 0;
+	padding: 100px 0;
 }
 
 section .container {
@@ -135,7 +155,7 @@ section .container .section-subheading {
 
 .section-list li a{
 	display: inline-block;
-	background: #DDD23B;
+	background: #FFC408;
 	border-radius: 100px;
 	color: #fff;
 	padding: 27px 30px;
@@ -171,7 +191,7 @@ section .container .section-subheading {
 }
 
 .resource-list .resource-col a .resource-img-hover {
-	background: #DDD23B;
+	background: #FFC408;
 	opacity: 0;
 	width: 290px;
 	height: 200px;
@@ -234,7 +254,7 @@ section .container .section-subheading {
 	content: '';
 	width: 2px;
 	right: 41px;
-	background: #fed136;
+	background: #FFC408;
 }
 
 .character-list .character-col .character-name li {
@@ -259,11 +279,11 @@ section .container .section-subheading {
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	/*background: #fed136 url(../img/sprites/rachel.png) no-repeat;*/
+	/*background: #FFC408 url(../img/sprites/rachel.png) no-repeat;*/
 	right: 0;
 	border-radius: 50%;
-	/*background-color: #fed136;*/
-	border: 2px solid #fed136;
+	/*background-color: #FFC408;*/
+	border: 2px solid #FFC408;
 }
 
 .character-list .character-col .character-name .character-name-panel {
@@ -288,17 +308,20 @@ section .container .section-subheading {
 	margin-top: 20px;
 }
 
-.team-member ul {
+.team-member ul,
+.footer-member ul{
 	list-style: none;
 }
 
-.team-member ul li {
+.team-member ul li,
+.footer-member ul li {
 	display: inline-block;
 	padding-right: 5px;
 	padding-left: 5px;
 }
 
-.team-member ul li a {
+.team-member ul li a,
+.footer-member ul li a{
 	display: block;
 	background-color: #222;
 	height: 50px;
@@ -311,22 +334,101 @@ section .container .section-subheading {
 	margin-top: 10px;
 }
 
-.team-member ul li a:hover {
-	background-color: #fed136;
+.team-member ul li a:hover,
+.footer-member ul li a:hover {
+	background-color: #FFC408;
 }
 
-.team-member ul li a .icon-weibo:before {
+.team-member ul li a .icon-weibo:before,
+.footer-member ul li a .icon-weibo:before{
 	content: '\e601';
 }
 
-.team-member ul li a .icon-douban:before {
+.team-member ul li a .icon-douban:before,
+.footer-member ul li a .icon-douban:before {
 	content: '\e600';
 }
 
-.team-member ul li a .icon-mafengwo:before {
+.team-member ul li a .icon-mafengwo:before,
+.footer-member ul li a .icon-mafengwo:before {
 	content: '\e67b';
 }
 
 .team-list {
 	margin-bottom: 50px;
+}
+
+section#contact {
+	background-color: #222;
+	background-image: url(../img/transparent-image.png);
+	background-position: center;
+	background-repeat: repeat;
+}
+
+section#contact h2 {
+	color: #fff;
+}
+
+.form-half {
+	width: 50%;
+	float: left;
+}
+
+.form-half .form-group {
+	margin-bottom: 30px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.form-half .form-group .form-control {
+	padding: 20px;
+	width: 90%;
+	border-radius: 4px;
+	display: block;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: inherit;
+}
+
+.form-half .form-group textarea {
+	height: 209px;
+}
+
+.form-list .submit button {
+	background-color: #FFC408;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 20px 40px;
+	border-color: #FFC408;
+	border-radius: 4px;
+	font-weight: 700;
+	font-size: 24px;
+	border: 1px solid transparent;
+	margin-top: 10px;
+}
+
+.form-list .submit button:hover {
+	border-color: #fec503;
+	background-color: #fec503;
+}
+
+.footer-member {
+	text-align: center;
+	width: 33.33%;
+	float: left;
+}
+
+.footer-member span {
+	padding:25px;
+	display: inline-block;
+}
+
+.footer-member:last-child span a{
+	color: #FFC408;
+	text-decoration: none;
+}
+
+.footer-member:last-child span a:hover {
+	text-decoration: underline;
 }
