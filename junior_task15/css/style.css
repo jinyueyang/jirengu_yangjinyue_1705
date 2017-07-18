@@ -41,7 +41,7 @@ body {
 }
 
 .navbar-brand {
-	color: #FFC408;
+	color: #33A6B8;
 	text-decoration: none;
 	padding: 10px;
 }
@@ -67,7 +67,7 @@ body {
 }
 
 .navbar .container .navbar-menu .navbar-right>li:hover {
-	background: #FFC408;
+	background: #33A6B8;
 }
 
 .navbar .container .navbar-menu .navbar-right>li>a:hover {
@@ -105,11 +105,11 @@ header .intro-text .intro-heading {
 }
 
 header .intro-text a {
-	background-color: #FFC408;
+	background-color: #33A6B8;
 	text-transform: uppercase;
 	color: #fff;
 	padding: 20px 40px;
-	border-color: #FFC408;
+	border-color: #33A6B8;
 	border-radius: 4px;
 	font-weight: 700;
 	font-size: 18px;
@@ -155,7 +155,7 @@ section .container .section-subheading {
 
 .section-list li a{
 	display: inline-block;
-	background: #FFC408;
+	background: #33A6B8;
 	border-radius: 100px;
 	color: #fff;
 	padding: 27px 30px;
@@ -180,8 +180,10 @@ section .container .section-subheading {
 
 .resource-list .resource-col {
 	float: left;
-	margin: 12px;
-
+	/*margin: 25px;*/
+	margin: 50px 0;
+	width: 25%;
+	position: relative;
 }
 
 .resource-list .resource-col a {
@@ -191,11 +193,12 @@ section .container .section-subheading {
 }
 
 .resource-list .resource-col a .resource-img-hover {
-	background: #FFC408;
+	background: #33A6B8;
 	opacity: 0;
-	width: 290px;
+	width: 90%;
 	height: 200px;
 	position: absolute;
+	left: 5%;
 	line-height: 200px;
 }
 
@@ -211,17 +214,23 @@ section .container .section-subheading {
 }
 
 .resource-list .resource-col a img {
-	height: 200px;
-	width: 290px;
+	/*height: 200px;
+	width: 280px;*/
+	width: 90%;
 }
 
 .resource-list .resource-col .resource-content {
-	padding: 25px;
+	padding: 10px 0;
+	width: 90%;
 	background: #fff;
+	text-align: center;
+	position: absolute;
+	left: 5%;
 }
 
 .resource-list .resource-col .resource-content h3 {
 	font-size: 18px;
+
 }
 
 .resource-list .resource-col .resource-content p {
@@ -234,6 +243,7 @@ section .container .section-subheading {
 .character-list .character-col {
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 	float: left;
+	width: 12.5%;
 }
 
 .character-list .character-col:nth-child(2n+1) {
@@ -253,8 +263,8 @@ section .container .section-subheading {
 	position: absolute;
 	content: '';
 	width: 2px;
-	right: 41px;
-	background: #FFC408;
+	right: 43px;
+	background: #f1f1f1;
 }
 
 .character-list .character-col .character-name li {
@@ -279,11 +289,11 @@ section .container .section-subheading {
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	/*background: #FFC408 url(../img/sprites/rachel.png) no-repeat;*/
+	/*background: #33A6B8 url(../img/sprites/rachel.png) no-repeat;*/
 	right: 0;
 	border-radius: 50%;
-	/*background-color: #FFC408;*/
-	border: 2px solid #FFC408;
+	/*background-color: #33A6B8;*/
+	border: 4px solid #f1f1f1;
 }
 
 .character-list .character-col .character-name .character-name-panel {
@@ -336,7 +346,7 @@ section .container .section-subheading {
 
 .team-member ul li a:hover,
 .footer-member ul li a:hover {
-	background-color: #FFC408;
+	background-color: #33A6B8;
 }
 
 .team-member ul li a .icon-weibo:before,
@@ -396,11 +406,11 @@ section#contact h2 {
 }
 
 .form-list .submit button {
-	background-color: #FFC408;
+	background-color: #33A6B8;
 	text-transform: uppercase;
 	color: #fff;
 	padding: 20px 40px;
-	border-color: #FFC408;
+	border-color: #33A6B8;
 	border-radius: 4px;
 	font-weight: 700;
 	font-size: 24px;
@@ -425,7 +435,7 @@ section#contact h2 {
 }
 
 .footer-member:last-child span a{
-	color: #FFC408;
+	color: #33A6B8;
 	text-decoration: none;
 }
 
