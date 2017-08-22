@@ -1,0 +1,11 @@
+<script type="text/javascript">
+	function factor(n){
+		if (n < 0 ) {
+			return "wrong";
+		}else if (n === 1 || n === 0) {
+			return 1;
+		}else	{
+			return n * factor(n-1);
+		};
+	}
+</script>

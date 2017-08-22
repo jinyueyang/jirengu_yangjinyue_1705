@@ -1,0 +1,39 @@
+<script type="text/javascript">
+	var x = 10;
+	bar() 
+	function bar(){
+	  var x = 30;
+	  (function (){
+	    console.log(x)
+	  })()
+	}
+
+	/*
+	globalContext = {
+		AO: {
+			x: 10
+			bar: function
+		}
+		Scope: null
+	}
+
+	bar.[[scope]] = globalContext.AO
+
+	barContext = {
+		AO: {
+			x: 30
+			function
+		}
+		Scope: globalContext.AO
+	}
+
+	function.[[scope]] = barContext.AO
+
+	functionContext = {
+		AO: {}
+		Scope: barContext.AO
+	}
+	*/
+
+	//输出：30
+</script>
