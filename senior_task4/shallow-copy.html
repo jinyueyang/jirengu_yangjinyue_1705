@@ -1,0 +1,36 @@
+<script type="text/javascript">
+	var obj = {
+		age: 100,
+		friend: {
+			name: 'ruoyu',
+			sex: 'male'
+		}
+	}
+
+	function shallowCopy(obj) {
+		var newObj = {};
+		for(var i in obj) {
+			if(obj.hasOwnProperty(i)) {
+				newObj[i] = obj[i];
+			}
+		}
+		return newObj;
+	}
+
+	var obj2 = shallowCopy(obj);
+
+	obj.age = 200;
+	obj.friend.name = 'jirengu';
+
+	console.log(obj2);
+
+	/*输出
+	Object {
+		age: 100,   //不变
+		friend: {
+			name: 'jirengu',   //变了
+			sex: 'male'
+		}
+	}
+	*/
+</script>

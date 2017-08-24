@@ -1,0 +1,70 @@
+<script type="text/javascript">
+	var obj = {
+		age: 100,
+		friend: {
+			name: 'ruoyu',
+			sex: 'male'
+		}
+	}
+
+	function deepCopy(obj){
+		var newObj = {};
+		for(var key in obj){
+			if(obj.hasOwnProperty(key)){
+				if(typeof obj[key] === 'number' || typeof obj[key] === 'boolean' || typeof obj[key] === 'string' || obj[key] === undefined || obj[key] === null){
+					newObj[key] = obj[key];
+				}else{
+					newObj[key] = deepCopy(obj[key]);  //递归
+				}
+			}
+		}
+		return newObj;
+	}
+
+	var obj3 = deepCopy(obj);
+
+	obj.age = 200;
+	obj.friend.name = 'jirengu';
+
+	console.log(obj3);
+
+	/*输出
+	Object {
+		age: 100,   //不变
+		friend: {
+			name: 'ruoyu',   //不变
+			sex: 'male'
+		}
+	}
+	*/
+</script>
+
+
+
+<script type="text/javascript">
+	//JSON对象的parse()和stringify()方法
+	var obj0 = {
+		age: 100,
+		friend: {
+			name: 'ruoyu',
+			sex: 'male'
+		}
+	}
+
+	var newObj2 = JSON.parse(JSON.stringify(obj0));
+
+	obj0.age = 200;
+	obj0.friend.name = 'jirengu';	
+
+	console.log(newObj2);
+
+	/*输出
+	Object {
+		age: 100,   //不变
+		friend: {
+			name: 'ruoyu',   //不变
+			sex: 'male'
+		}
+	}
+	*/
+</script>
