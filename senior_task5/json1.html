@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	var company = {
+	    name: '饥人谷',
+	    age: 3,
+	    sayHello: function(){
+	        console.log('hello world')
+	    }
+	}
+	console.log(company.name)
+	console.log(company['name'])
+	company.sayHello()
+
+	company.addr = '杭州市'
+	company['business'] = '前端课程'
+
+	for(var key in company){
+	    console.log(key)
+	    console.log(company[key])
+	}
+</script>
