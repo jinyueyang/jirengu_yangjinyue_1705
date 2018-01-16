@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<dl class="product"><dt>女装</dt><dd>短款</dd><dd>冬季</dd><dd>春装</dd></dl>
+
+	<script type="text/javascript">
+		var prod = {
+		    name: '女装',
+		    styles: ['短款', '冬季', '春装']
+		};
+
+		function getTpl(data){
+			var str = '<dl class = "product">'
+			str = str + '<dt>' + data.name + '</dt>'
+			for(var i = 0; i < data.styles.length; i++){
+				str = str + '<dd>' + data.styles[i] + '</dd>'
+			}
+			str = str + '</dl>'
+			return str;
+		};
+
+		var result = getTpl(prod);  //result为下面的字符串
+		console.log(result)
+	</script>
+
+	<script type="text/javascript">
+		var str = 'abcdeabcdeabcdeancdeabcdeabcdeabcdeancdeabcdeabcdeabcdeancdeabcdeabcdeabcdeancde'
+
+		var str1 = 
+		'abcdeabcdeabcd\
+		eancdeabcdeabc\
+		deabcdeancdeabc\
+		deabcdeabcdeanc\
+		deabcdeabcdeab\
+		cdeancde'
+
+		var str2 = 'abcdeabcdeabcd'
+		+ 'eancdeabcdeabc'
+		+ 'deabcdeancdeabc'
+		+ 'deabcdeabcdeanc'
+		+ 'deabcdeabcdeab'
+		+ 'cdeancde'
+	</script>
+
+	<script type="text/javascript">
+		var str = 'hello\\\\饥人谷'
+		console.log(str)
+	</script>
+
+	<script type="text/javascript">
+		var str = 'jirengu\nruoyu'
+		console.log(str)
+		console.log(str.length)
+	</script>
+
+	<script type="text/javascript">
+		function fn(str){
+			if (str == str.split('').reverse().join('')){
+				console.log('这是一个回文字符串')
+			} else{
+				console.log('这不是一个回文字符串')
+			}
+		}
+
+		var str1 = 'abcdedcba'
+		var str2 = 'abcdefghi'
+		fn(str1)
+		fn(str2)
+	</script>
+
+	<script type="text/javascript">
+		var str = 'http://www.w3school.com.cn/jsref/jsref_split.asp'
+		var dict = {}
+		var count = 0
+		var maxValue
+
+		for(i = 0; i < str.length; i++){
+			if(dict[str[i]]){
+				++dict[str[i]]
+			} else{
+				dict[str[i]] = 1
+			}
+		}
+
+		for(key in dict){
+			if(dict[key] > count){
+				maxValue = key
+				count = dict[key]
+			} 
+		}
+
+		console.log(maxValue, count)
+	</script>
+
+	<script type="text/javascript">
+		function camelize(str){
+			var arr = str.split('-');
+			for(i = 1; i < arr.length; i++){
+				arr[i] = arr[i].replace(arr[i][0],arr[i][0].toUpperCase());
+			}
+			return arr.join('')
+		}
+
+		var str1 = 'background-color'
+		console.log(camelize(str1))
+	</script>
+
+	<script type="text/javascript">
+		function ucFirst(str){
+			str = str.replace(str[0],str[0].toUpperCase());
+			return str
+		}
+
+		str1 = 'jirengu'
+		console.log(ucFirst(str1))
+	</script>
+
+	<script type="text/javascript">
+		function turncate(str, n){
+			if(str.length > n){
+				str = str.substr(0, n) + '...'
+				return str;
+			}
+		}
+
+		str1 = "background"
+		console.log(turncate(str1, 4))
+	</script>
+</body>
+</html>
