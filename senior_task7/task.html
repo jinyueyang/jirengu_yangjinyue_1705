@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function trim(str){
+			var reg = /^\s+|\s+$/
+			return (str.replace(reg, ""));
+		}
+		var str1 = "   abcd ef g    "
+		console.log(trim(str1))
+	</script>
+
+	<script type="text/javascript">
+		function isEmail(str){
+			var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/g
+			if (reg.test(str)) {
+				console.log("It is an email.")
+			} else {
+				console.log("It is not an email")
+			}
+		}
+		isEmail("976316771@qq.com")
+		isEmail("a_moonpie@163.com")
+		isEmail("yangjinyue@hearst.com.cn")
+	</script>
+
+	<script type="text/javascript">
+		function isPhoneNum(str){
+			var reg = /^1[3578]\d{9}$/g
+			if (reg.test(str)) {
+				console.log("It is a phone number")
+			} else {
+				console.log("It is not a phone number")
+			}
+		}
+		isPhoneNum("15652906658")
+		isPhoneNum("12652906658")
+	</script>
+
+	<script type="text/javascript">
+		function isValidUsername(str){
+			var reg = /^\w{6,20}$/g
+			if (reg.test(str)) {
+				console.log("It is a valid username.")
+			} else {
+				console.log("It is not a valid username")
+			}		
+		}
+		isValidUsername("12a")
+		isValidUsername("moonpie")
+		isValidUsername("moonpie@")
+	</script>
+
+	<script type="text/javascript">
+		function isValidPassword(str){
+			var reg = /^\w{6,20}$/g
+			var reg1 = /^[A-Z]{6,20}$/g
+			var reg2 = /^[a-z]{6,20}$/g
+			var reg3 = /^\d{6,20}$/g
+			var reg4 = /^_{6,20}$/g
+			if (!reg.test(str)) {
+				console.log("It is not a valid password")
+			} else if (reg1.test(str)) {
+				console.log("It is not a valid password")
+			} else if (reg2.test(str)) {
+				console.log("It is not a valid password")
+			} else if (reg3.test(str)) {
+				console.log("It is not a valid password")
+			} else if (reg4.test(str)) {
+				console.log("It is not a valid password")
+			} else {
+				console.log("It is a valid password")
+			}
+		}
+		isValidPassword("1234567890")
+		isValidPassword("ABCDEFGHIG")
+		isValidPassword("abcdefghig")
+		isValidPassword("__________")
+		isValidPassword("abcd67890")
+		isValidPassword("abcd1")
+	</script>
+
+	<script type="text/javascript">
+		var re = /(#[a-zA-Z0-9]{6}|#[a-zA-Z0-9]{3})(?=;)/g
+		var subj = "color: #121212; background-color: #AA00ef; width: 12px; bad-colors: f#fddee "
+		console.log( subj.match(re) )  // ['#121212', '#AA00ef']
+	</script>
+
+	<script type="text/javascript">
+		var str = 'hello  "hunger" , hello "world"';
+		var pat =  /".*"/g;
+		console.log(str.match(pat)); //[""hunger" , hello "world""]
+
+		var pat1 = /".*?"/g;
+		console.log(str.match(pat1));
+	</script>
+</body>
+</html>
