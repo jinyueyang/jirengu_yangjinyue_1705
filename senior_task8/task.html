@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(document.location.href)
+	</script>
+
+	<div id="wrap">
+		<div class="inner">hello world</div>
+		<div class="inner">hello javascript</div>
+		<p>jirengu</p>
+		<p>ruoyu</p>
+		<form name="inner-form"></form>
+	</div>
+
+	<script type="text/javascript">
+		console.log(document.getElementById("wrap").childNodes)
+		console.log(document.getElementById("wrap").children)
+	</script>
+
+	<script type="text/javascript">
+		//getElementById(),返回匹配指定ID属性的元素节点,只能在document上使用，不能在element上使用
+		var arr1 = document.getElementById('wrap')
+		console.log(arr1)
+		/*返回
+	<div id="wrap">
+		<div class="inner">hello world</div>
+		<div class="inner">hello javascript</div>
+		<p>jirengu</p>
+		<p>ruoyu</p>
+		<form name="inner-form"></form>
+	</div>
+		*/
+
+		//getElementsByClassName(),返回一个类似数组的对象（HTMLCollection类型的对象），包括了所有class名字符合指定条件的元素（搜索范围包括本身），元素的变化实时反映在返回结果中。这个方法不仅可以在document对象上调用，也可以在任何元素节点上调用;参数可以是多个空格分隔的class名字，返回同时具有这些节点的元素
+		var arr2 = document.getElementsByClassName('inner')
+		console.log(arr2[0])
+		//返回<div class="inner">hello world</div>
+
+		//getElementsByTagName(),返回所有指定标签的元素（搜索范围包括本身）。返回值是一个HTMLCollection对象，也就是说，搜索结果是一个动态集合，任何元素的变化都会实时反映在返回的集合中。这个方法不仅可以在document对象上调用，也可以在任何元素节点上调用
+		var arr3 = document.getElementsByTagName('p')
+		console.log(arr3[1])
+		//返回<p>ruoyu</p>
+
+		//getElementsByName(),用于选择拥有name属性的HTML元素，比如form、img、frame、embed和object，返回一个NodeList格式的对象，不会实时反映元素的变化.只能在document中使用，不能在element中使用
+		var arr4 = document.getElementsByName('inner-form')
+		console.log(arr4[0])
+		//返回<form name="inner-form"></form>
+
+
+		//ES5的元素选择方法:
+		//querySelector(),返回匹配指定的CSS选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回null.querySelector方法无法选中CSS伪元素
+		var arr5 = document.querySelector('#wrap .inner')
+		console.log(arr5)
+		//返回<div class="inner">hello world</div>
+
+		//querySelectorAll(),返回匹配指定的CSS选择器的所有节点，返回的是NodeList类型的对象。NodeList对象不是动态集合，所以元素节点的变化无法实时反映在返回结果中;参数可以是逗号分隔的多个CSS选择器，返回所有匹配其中一个选择器的元素
+		var arr6 = document.querySelectorAll('#wrap .inner')
+		console.log(arr6[1])
+		//返回<div class="inner">hello javascript</div>
+	</script>
+
+	<div id="wrap1">
+		<div id="inner1">aaa</div>
+		<div id="inner2">bbb</div>		
+	</div>
+
+	<script type="text/javascript">
+		//创建元素
+		//document.createElement("div"),用来生成 HTML 元素节点。createElement 方法的参数为元素的标签名，即元素节点的 tagName 属性。如果传入大写的标签名，会被转为小写。如果参数带有尖括号（即<和 >）或者是 null，会报错
+		var newDiv = document.createElement("p");
+		
+		//createTextNode(),用来生成文本节点，参数为所要生成的文本节点的内容
+		var newContent = document.createTextNode("ccc");
+		newDiv.appendChild(newContent)
+
+		//createDocumentFragment(),生成一个DocumentFragment对象
+		var docFragment = document.createDocumentFragment();
+
+
+		//创建属性
+		//setAttribute(),设置元素属性
+		var node = document.getElementById("wrap1");
+		node.setAttribute("style", "background-color:blue");
+		//等同于
+		var node1 = document.getElementById("inner1");
+		var a = document.createAttribute("style");
+		a.value = "background-color:green";
+		node1.setAttributeNode(a);
+
+		//删除属性
+		//romoveAttribute(),删除元素属性
+		node.removeAttribute("wrap1");
+
+		console.log(document.getElementById("wrap1"))
+	</script>
+
+
+	<script type="text/javascript">
+		//修改元素
+		//appendChild(),在元素末尾添加元素
+		var newDiv = document.createElement("div");
+		var newContent = document.createTextNode("Hello");
+		newDiv.appendChild(newContent);
+
+		//insertBefore(),在某个元素之前插入元素
+		var newDiv = document.createElement("div");
+		var newContent = document.createTextNode("Hello");
+		newDiv.insertBefore(newContent, newDiv.firstChild);
+
+		//replaceChild(),接受两个参数：要插入的元素和要替换的元素
+		// newDiv.replaceChild(newElement, oldElement);
+
+
+		//删除元素
+		//使用removeChild()方法
+		// parentNode.removeChild(childNode);
+	</script>
+
+	<div class="mod-tabs">
+   	<ul>
+       <li>list1</li>
+       <li>list2</li>
+       <li>list3</li>
+  	</ul>
+  	<button class="btn">点我</button>
+	</div>
+
+  <script type="text/javascript">
+  	var arr7 = document.getElementsByTagName('li')
+  	var arr8 = document.getElementsByTagName('button')
+  	//or
+  	var arr7 = document.querySelectorAll('.mod-tabs li')
+  	var arr8 = document.querySelectorAll('.mod-tabs .btn')
+  </script>
+
+
+
+</body>
+</html>
