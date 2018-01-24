@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<h2 style="color:blue;">题目7</h2>
+	<ul class="ct2">
+    <li data-img="1.png">伦敦</li>
+    <li data-img="2.png">莫斯科</li>
+    <li data-img="3.png">巴黎</li>
+	</ul>
+	<div class="img-preview"></div>
+	<script>
+		var imgWrap = document.querySelector('.ct2');
+		var imgPreview = document.querySelector('.img-preview');
+		imgWrap.addEventListener('mouseover', function(e){
+			var imgs = e.target.getAttribute('data-img')
+			imgPreview.innerHTML = '<img src = "' + imgs +'">';
+		});
+		imgWrap.addEventListener('mouseout', function(){
+			imgPreview.innerHTML = null;
+		});
+	</script>
+	
+</body>
+</html>

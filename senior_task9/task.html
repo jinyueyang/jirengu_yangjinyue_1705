@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- DOM0 -->
+	<input type="submit" value="Click me" onclick="console.log('Hello world!')">
+	<input type="submit" value="Click me, too" class="btn">
+	<script type="text/javascript">
+		var btn = document.getElementsByClassName("btn")[0];
+		btn.onclick = function(){
+			console.log("Hello jirengu!")
+		}
+	</script>
+
+	<!-- DOM2 -->
+	<input id="btnClick" type="button" value="Click Here">
+	<script type="text/javascript">
+		var btnClick = document.getElementById("btnClick")
+		btnClick.addEventListener('click', function(){
+			alert(this.id);
+		}, false);
+	</script>
+
+	<!-- stopPropagation() 取消事件进一步捕获或冒泡 -->
+	<input id="btnClick1" type="button" value="Click Here">
+	<script type="text/javascript">
+		var btnClick1 = document.getElementById("btnClick1")
+		btnClick1.addEventListener('click', function(e){
+			alert(e.id);
+			e.stopPropagation();
+		}, false);
+	</script>
+
+	<!-- preventDefault() 阻止默认事件的行为 -->
+	<a href="http://www.baidu.com">baidu</a>
+	<script type="text/javascript">
+		document.querySelector('a').onclick = function(e){
+			e.preventDefault();
+			console.log(this.href);
+			if(/baidu.com/.test(this.href)){
+				location.href = this.href;
+			}
+		}
+	</script>
+
+	<h2 style="color:blue;">题目5</h2>
+	<ul class="ct">
+	    <li>这里是</li>
+	    <li>饥人谷</li>
+	    <li>前端6班</li>
+	</ul>
+	<script>
+		var liClick = document.getElementsByTagName('li')
+		for(var i = 0; i < liClick.length; i++){
+			liClick[i].addEventListener('click', function(){
+				console.log(this.innerText);
+			});			
+		}
+	</script>
+
+	<h2 style="color:blue;">题目6</h2>
+	<ul class="ct1">
+	    <li>这里是</li>
+	    <li>饥人谷</li>
+	    <li>任务班</li>
+	</ul>
+	<input class="ipt-add-content" placeholder="添加内容"/>
+	<button id="btn-add-start">开头添加</button>
+	<button id="btn-add-end">结尾添加</button>
+	<script>
+		var nodeUi = document.querySelector('.ct1');
+		console.log(nodeUi)
+		var nodeLi = document.querySelectorAll('.ct1 li');
+		var btnAddStart = document.getElementById('btn-add-start');
+		var btnAddEnd = document.getElementById('btn-add-end');
+		btnAddStart.addEventListener('click', function(){
+			if(document.querySelector('.ipt-add-content').value){
+				var newLi = document.createElement('li')
+				var nodeText = document.createTextNode(document.querySelector('.ipt-add-content').value);
+				newLi.appendChild(nodeText);
+				nodeUi.insertBefore(newLi,nodeUi.childNodes[0]);
+				document.querySelector('.ipt-add-content').value = null;
+			}
+		});
+		btnAddEnd.addEventListener('click', function(){
+			if(document.querySelector('.ipt-add-content').value){
+				var newLi = document.createElement('li')
+				var nodeText = document.createTextNode(document.querySelector('.ipt-add-content').value);
+				newLi.appendChild(nodeText);
+				nodeUi.appendChild(newLi);
+				document.querySelector('.ipt-add-content').value = null;				
+			}
+		});
+		nodeUi.addEventListener('click', function(e){
+			var content = e.target.innerText;
+			console.log(content)
+		});
+	</script>
+
+	<h2 style="color:blue;">题目7</h2>
+	<ul class="ct2">
+    <li data-img="1.png">伦敦</li>
+    <li data-img="2.png">莫斯科</li>
+    <li data-img="3.png">巴黎</li>
+	</ul>
+	<div class="img-preview"></div>
+	<script>
+		var imgWrap = document.querySelector('.ct2');
+		var imgPreview = document.querySelector('.img-preview');
+		imgWrap.addEventListener('mouseover', function(e){
+			var imgs = e.target.getAttribute('data-img')
+			imgPreview.innerHTML = '<img src = "' + imgs +'">';
+		});
+		imgWrap.addEventListener('mouseout', function(){
+			imgPreview.innerHTML = null;
+		});
+
+	</script>
+</body>
+</html>
