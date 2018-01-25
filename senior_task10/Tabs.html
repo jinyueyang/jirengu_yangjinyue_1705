@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tab效果的实现</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.wrap {
+			width: 606px;
+			margin: 50px auto;
+			text-align: center;
+		}
+		.tabs::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.tabs>li {
+			float: left;
+			width: 200px;
+			padding: 10px 0;
+			border: 1px solid #BECF6F;
+		}
+		.tabs>.item {
+			background-color: #BECF6F;
+			color: #fff;
+		}
+		.content>div {
+			display: none;
+			text-align: center;
+			border: 3px solid #BECF6F;
+			width: 600px;
+			padding: 100px 0;
+		}
+		.content>.active {
+			display: block;
+		}
+		.content>div>p {
+			line-height: 2;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="tabs">
+			<li class="item">蜗牛</li>
+			<li>乌龟</li>
+			<li>蜜蜂</li>
+		</ul>
+		<div class="content">
+			<div class="active">
+				<p>【喜欢】包菜，辣椒，温泉馒头</p>
+				<p>【不喜欢】柿子，桃子，香蕉，苹果，草莓，五色豆</p>
+			</div>
+			<div>
+				<p>【喜欢】茶叶，温泉馒头</p>
+				<p>【不喜欢】牛奶，白菜，苹果，草莓，橘子，五色豆</p>
+			</div>
+			<div>
+				<p>【喜欢】草莓，苹果，温泉馒头，板栗，香蕉，五色豆</p>
+				<p>【不喜欢】橘子，牛奶，白菜，柿子，辣椒，大米，洋葱，大蒜，大葱</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var liTabs = document.querySelectorAll('.tabs li')
+		var liContent = document.querySelectorAll('.content>div')
+		liTabs.forEach(function(tab){
+			tab.addEventListener('click', function(){
+				liTabs.forEach(function(node, ind){
+					node.classList.remove('item');
+				})
+				this.classList.add('item');
+				var index = new Array().indexOf.call(liTabs, this)
+				liContent.forEach(function(node){
+					node.classList.remove('active');
+				})
+				liContent[index].classList.add('active')
+			})
+		})
+	</script>
+</body>
+</html>
