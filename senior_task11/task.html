@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var fnArr = [];
+		for (var i = 0; i < 10; i ++) {
+		    fnArr[i] =  function(){
+			    return i;
+		    };
+		}
+		console.log( fnArr[3]() );  //10
+		//首先执行for循环，i自增到10后跳出循环，然后执行函数fnArr[3](),此时i=10，所以输出10
+
+		//改造1
+		var fnArr = []
+		for (var i = 0; i < 10; i ++) {
+		  fnArr[i] =  (function(j){  //j是自由变量，只受传入的参数影响
+		    return function(){  //返回一个函数function(){}
+		      return j
+		    } 
+		  })(i)  //外部传入的参数
+		}
+		console.log( fnArr[3]() ) // 3
+		//fnArr[3]()能调用，说明fnArr[i]是个函数，所以上面需要返回一个函数function(){}
+
+		//改造2
+		var fnArr = []
+		for (var i = 0; i < 10; i ++) {
+		  (function(i){
+		    fnArr[i] =  function(){
+		      return i
+		    } 
+		  })(i)
+		}
+		console.log( fnArr[3]() ) // 3
+
+		//改造3
+		var fnArr = []
+		for (let i = 0; i < 10; i ++) {
+		  fnArr[i] =  function(){
+		    return i
+		  } 
+		}
+		console.log( fnArr[3]() ) // 3
+		</script>
+
+
+	<script type="text/javascript">
+		var Car = (function(){
+			var speed = 0;
+			function setSpeed(s){
+				speed = s
+			}
+			function getSpeed(){
+				return speed
+			}
+			function accelerate(){
+				speed = speed + 10
+			}
+			function decelerate(){
+				speed = speed - 10
+			}
+			function getStatus(){
+				if(speed <= 0){
+					return "stop"
+				} else {
+					return "running"
+				}				
+			}
+			return {
+				setSpeed: setSpeed,
+			  getSpeed: getSpeed,
+			  accelerate: accelerate,
+			  decelerate: decelerate,
+			  getStatus: getStatus
+			}
+		})()
+
+		Car.setSpeed(30);
+		console.log(Car.getSpeed());
+		Car.accelerate();
+		console.log(Car.getSpeed());
+		Car.decelerate();
+		Car.decelerate();
+		console.log(Car.getSpeed());
+		console.log(Car.getStatus());
+		Car.decelerate();
+		Car.decelerate();
+		console.log(Car.getStatus());
+	</script>
+
+
+	<script type="text/javascript">
+		var a = 1;
+		setTimeout(function(){
+		    a = 2;
+		    console.log(a);  //此时a=2，最后执行
+		}, 0);
+		var a ;
+		console.log(a);  //此时a=1，首先执行
+		a = 3;
+		console.log(a);  //此时a=3，其次执行
+		//输出1,3,2
+		//异步执行，全部代码执行完再执行setTimeout中的函数
+	</script>
+
+
+	<script type="text/javascript">
+		/*
+		var flag = true;
+		setTimeout(function(){
+		    flag = false;
+		},0)
+		while(flag){}
+		console.log(flag);
+		*/
+	  //无任何输出。异步执行，先执行while(flag){};console.log(flag);后再执行setTimeout中的函数，执行while(flag){};时flag=true，while()循环为死循环，页面会一直加载，没有输出。
+	</script>
+
+
+	<script type="text/javascript">
+		for(var i=0;i<5;i++){
+			setTimeout(function(){
+				console.log('delayer:' + i );
+			}, 0);
+			console.log(i);
+		}
+		//依次输出1,2,3,4,delayer:5。
+
+		//改造1
+		for(var i=0; i<5; i++){
+		  (function(j){
+		    setTimeout(function(){
+		      console.log('delayer:' + j )
+		    }, 0)    
+		  })(i)
+		}
+
+		//改造2
+		for(var i=0; i<5; i++){
+		  setTimeout((function(j){
+		    return function(){
+		      console.log('delayer:' + j )
+		    }
+		  }(i)), 0)    
+		}
+	</script>
+</body>
+</html>

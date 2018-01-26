@@ -1,0 +1,35 @@
+* {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+li {
+	list-style: none;
+}
+.wrap {
+	width: 90%;
+	margin: 40px auto;
+}
+.tabs::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.tabs>li {
+	float: left;
+	width: 120px;
+	padding: 10px 0;
+	border: 2px solid #9DC469;
+	margin: 5px;
+	border-radius: 3px;
+	color: #9DC469;
+
+}
+.tabs>li:hover {
+	color: #fff;
+	background-color: #9DC469;
+	box-shadow: 0 0 5px;
+}
+.props {
+	margin-top: 40px;
+}
