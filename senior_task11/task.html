@@ -40,7 +40,7 @@
 
 		//改造3
 		var fnArr = []
-		for (let i = 0; i < 10; i ++) {
+		for (let i = 0; i < 10; i ++) {    //let 语句声明一个块级作用域的本地变量
 		  fnArr[i] =  function(){
 		    return i
 		  } 
@@ -62,7 +62,11 @@
 				speed = speed + 10
 			}
 			function decelerate(){
-				speed = speed - 10
+				if(speed >= 10){
+					speed = speed - 10
+				} else {
+					console.log("速度不能小于0！")
+				}
 			}
 			function getStatus(){
 				if(speed <= 0){
@@ -147,6 +151,22 @@
 		      console.log('delayer:' + j )
 		    }
 		  }(i)), 0)    
+		}
+	</script>
+
+
+	<script type="text/javascript">
+		function isAndroid(){
+		    return /android/i.test(navigator.userAgent);
+		}
+		function isIphone(){
+		    return /android/i.test(navigator.userAgent);
+		}
+		function isIpad(){
+		    return /ipad/i.test(navigator.userAgent);
+		}
+		function isIOS(){
+		    return /ipad/i.test(navigator.userAgent);
 		}
 	</script>
 </body>
