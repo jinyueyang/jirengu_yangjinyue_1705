@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模态框的实现</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+		a {
+			text-decoration: none;
+			color: red;
+		}
+		.curtain {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.open {
+			display: block;
+		}
+		.modality {
+			background-color: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -200px;
+			margin-top: -200px;
+			width: 400px;
+			height: 400px;
+			border-radius: 5px;
+			box-shadow: 0 0 8px;
+		}
+		.header {
+			position: relative;
+			border-bottom: 3px solid #BECF6F;
+			padding: 20px;
+			font-size: 20px;
+		}
+		.modality .close {
+			font-size: 30px;
+			position: absolute;
+			right: 10px;
+			top: 0;
+			color: #BECF6F;
+		}
+		.content {
+			padding: 15px;
+			font-size: 15px;
+			line-height: 2;
+			text-align: center;
+		}
+		.btn {
+			display: inline-block;
+			margin-top: 100px;
+			border: 3px solid #BECF6F;
+			width: 300px;
+			color: #BECF6F;
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 3px;
+			font-size: 30px;
+			box-shadow: 0 0 10px;
+		}
+		.btn:hover {
+			background-color: #BECF6F;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn">呱呱回来了！</button>
+	<div class="curtain">
+		<div class="modality">
+			<div class="header">
+				<h4>给妈妈带了点儿珍品</h4>
+				<a href="#" class="close">x</a>
+			</div>
+			<div class="content">
+				<p>鸠笛</p>
+				<p>圆形便当盒</p>
+				<p>福达摩玩具</p>
+				<p>装饰用梳子</p>
+				<p>招财猫</p>
+				<p>金扇子</p>
+				<p>古旧的火柴</p>
+				<p>蚊香架小猪</p>
+				<p>竹篮子</p>
+				<p>月兔纽扣</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var btn = document.querySelector('.btn');
+		var curtain = document.querySelector('.curtain');
+		var close = document.querySelector('.close');
+		var modality = document.querySelector('.modality');
+		btn.addEventListener('click', function(){
+			curtain.classList.add('open');
+		});
+		close.addEventListener('click', function(){
+			curtain.classList.remove('open');
+		});
+		curtain.addEventListener('click', function(){
+			curtain.classList.remove('open');
+		});
+		modality.addEventListener('click', function(e){
+			e.stopPropagation();
+		});
+	</script>
+</body>
+</html>

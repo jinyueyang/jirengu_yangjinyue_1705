@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击按钮，使用 ajax 获取数据，在数据到来之前防止重复点击</title>
+</head>
+<body>
+	<button id="btn" type="button">点击按钮</button>
+
+	<script type="text/javascript">
+
+		var btn = document.getElementById('btn')
+
+		var isLoading = false  //添加状态锁，初始为false，用于判断是否在加载数据
+		btn.addEventListener('click', function(){
+			if(!isLoading){
+				return;  //如果正在请求数据，这次点击什么都不做
+			}
+			var xhr = new XMLHttpRequest()
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState === 4){
+					if((xhr.status >= 200 && xhr.status <= 300) || xhr.status === 304){
+						console.log(xhr.responseText)
+					} else {
+						console.log('error')
+					}
+					lsLoading = false;   //readystate=4数据到来，状态锁变为false，可以再次点击
+				}
+				xhr.open('GET',url,true)
+				xhr.send()
+				isLoading = true  //数据发送，进入等待数据状态，状态锁变为true
+		})
+
+	</script>
+</body>
+</html>

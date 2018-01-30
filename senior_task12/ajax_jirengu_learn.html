@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//同步获取数据的方式
+		// var xhr = new XMLHttpRequest()
+		// xhr.open('GET','hello.json',false)
+		// xhr.send()
+		// var data = xhr.responseText
+		// console.log(data)
+
+
+		//异步
+		var xhr = new XMLHttpRequest()
+		xhr.open('GET','/login?username=jirengu&password=123123',true)  //true——异步，如果不监听，则数据还未加载js就执行完了
+		xhr.send()
+
+		//常见写法
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState === 4 && xhr.status === 200){
+				console.log(xhr.responseText)
+			}
+		}
+
+		//怎么判断是load状态呢？readyState是与服务器交互的过程有没有完毕
+		xhr.addEventListener('readystatechange', function(){
+			console.log("readyState:" , xhr.readyState)
+		})
+
+		//监听,status是服务器的状态，表示数据是否正常
+		xhr.onload = function(){     //readyState为4时，自动触发onload，所以不用判断readyState
+			console.log(xhr.status)
+			if((xhr.status >= 200 && xhr.status <= 300) || xhr.status === 304){      //服务器返回的状态码在200-300之间都有可能是成功的状态
+				var data = xhr.responseText
+				console.log(data)					
+			} else{
+				console.log('error')
+			}
+		}
+
+		xhr.onerror = function(){
+			console.log('error')
+		}
+		xhr.ontimeout = function(){
+			console.log('error')
+		}
+
+		//或
+		// xhr.addEventListener('load', function(){
+		// 	var data = xhr.responseText
+		// 	console.log(data)			
+		// })
+
+
+		//拼URL数据
+		makeUrl({
+			username: 'hunger',
+			age: 3
+		})
+		function makeUrl(obgj){
+			var arr = []
+			for(var key in obj){
+				arr.push( key + '=' + obj[key] )
+			}
+			return arr.join('&')
+		}
+
+
+		var xhr = new XMLHttpRequest()
+		xhr.open('POST','/login',true)  //
+		xhr.send(makeUrl({
+			username: 'hunger',
+			age: 3
+		}))//POST方法，不在URL地址里面拼数据，要放在send里发送
+		xhr.onload = function(){    
+			console.log(xhr.status)
+			if((xhr.status >= 200 && xhr.status <= 300) || xhr.status === 304){    
+				var data = xhr.responseText
+				console.log(data)					
+			} else{
+				console.log('error')
+			}
+		}
+
+
+//------------------------------------------------------------------------------------------------
+
+		//写一个ajax（1）
+		var xhr = new XMLHttpRequest()
+		xhr.open('GET', 'http://api.jirengu.com/weather.php', true)
+		xhr.onreadystatechange = function(){
+		    if(xhr.readyState === 4) {
+		        if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+		            //成功了
+		            console.log(xhr.responseText)
+		        } else {
+		            console.log('服务器异常')
+		        }
+		    }
+		}
+		xhr.onerror = function(){
+		    console.log('服务器异常')
+		}
+		xhr.send()
+
+
+		//写一个ajax（2）
+		var xhr = new XMLHttpRequest()
+		xhr.open('GET', 'http://api.jirengu.com/weather.php', true)
+		xhr.onload = function(){
+		    if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+		        //成功了
+		        console.log(xhr.responseText)
+		    } else {
+		        console.log('服务器异常')
+		    }
+		}
+		xhr.onerror = function(){
+		    console.log('服务器异常')
+		}
+		xhr.send()
+
+
+		//POST的使用
+	  var xhr = new XMLHttpRequest()
+	  xhr.timeout = 3000        //可选，设置xhr请求的超时时间
+	  xhr.open('POST', '/register', true)
+
+	  xhr.onload = function(e) { 
+	    if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+	      console.log(this.responseText)
+	    }
+	  }
+	    //可选
+	  xhr.ontimeout = function(e) { 
+	        console.log('请求超时')
+	  }
+
+	  //可选
+	  xhr.onerror = function(e) {
+	      console.log('连接失败')
+	  }
+	  //可选
+	  xhr.upload.onprogress = function(e) {
+	      //如果是上传文件，可以获取上传进度
+	  }
+
+	  xhr.send('username=jirengu&password=123456')
+
+
+	  //封装一个ajax
+		function ajax(opts){
+		    var url = opts.url
+		    var type = opts.type || 'GET'
+		    var dataType = opts.dataType || 'json'
+		    var onsuccess = opts.onsuccess || function(){}
+		    var onerror = opts.onerror || function(){}
+		    var data = opts.data || {}
+
+		    var dataStr = []
+		    for(var key in data){
+		        dataStr.push(key + '=' + data[key])
+		    }
+		    dataStr = dataStr.join('&')
+
+		    if(type === 'GET'){
+		        url += '?' + dataStr
+		    }
+
+		    var xhr = new XMLHttpRequest()
+		    xhr.open(type, url, true)
+		    xhr.onload = function(){
+		        if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+		            //成功了
+		            if(dataType === 'json'){
+		                onsuccess( JSON.parse(xhr.responseText))
+		            }else{
+		                onsuccess( xhr.responseText)
+		            }
+		        } else {
+		            onerror()
+		        }
+		    }
+		    xhr.onerror = onerror
+		    if(type === 'POST'){
+		        xhr.send(dataStr)
+		    }else{
+		        xhr.send()
+		    }
+		}
+
+		ajax({
+		    url: 'http://api.jirengu.com/weather.php',
+		    data: {
+		        city: '北京'
+		    },
+		    onsuccess: function(ret){
+		        console.log(ret)
+		    },
+		    onerror: function(){
+		        console.log('服务器异常')
+		    }
+		})
+	</script>
+</body>
+</html>
